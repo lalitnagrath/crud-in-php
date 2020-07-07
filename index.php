@@ -16,21 +16,50 @@
 
 $mysqli= new mysqli('localhost','root','wipro@007','crud') or die(mysqli_error($mysqli));
 //or die(mysqli_error($mysqli));
-   $result=  $mysqli->query("SELECT * FROM crud");
-   pre_r($result->fetch_assoc());
+$result = $mysqli->query('SELECT * from crud') or die(mysqli_error($mysqli));
 
-   function pre_r($array){
-       echo '<pre>';
-       print_r($array);
-       echo "</pre>";
-   }
+?>
+
+<div class="row justify-content-center">
+        <table class="table" >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <?php
+                while($row= $result->fetch_assoc()): ?>
+                <tr>
+                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['location']; ?></td>
+                <td><a href="index.php?edit=<?php echo $row['id']?> " class='btn btn-info'>Edit</a></td></tr>
+            ?>
+
+                <?php endwhile; ?>
+        </table>
+    
+</div>
+</div> 
+<?php
+
+//    $result=  $mysqli->query("SELECT * FROM crud");
+//    pre_r($result->fetch_assoc());
+//    pre_r($result->fetch_assoc());
+
+//    function pre_r($array){
+//        echo '<pre>';
+//        print_r($array);
+//        echo "</pre>";
+//    }
 
 
 ?>
 
 
 
-<div class="row justify-content-center col-xs-1 text-center">
+<div class="col-xs-1 text-center">
 <form action="process.php" method="POST"> 
 <div class="form-group">
 <input type="text" name="name" value="enter your name">
@@ -43,8 +72,7 @@ $mysqli= new mysqli('localhost','root','wipro@007','crud') or die(mysqli_error($
 <button type="submit" name="save">Save</button>
 </div>
 
-</div>
 </form>
-    
+    </div>
 </body>
 </html>
