@@ -20,7 +20,7 @@ $result = $mysqli->query('SELECT * from crud') or die(mysqli_error($mysqli));
 
 ?>
 
-<div class="row justify-content-center">
+<div class="text-center">
         <table class="table" >
             <thead>
                 <tr>
@@ -35,7 +35,7 @@ $result = $mysqli->query('SELECT * from crud') or die(mysqli_error($mysqli));
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['location']; ?></td>
                 <td><a href="index.php?edit=<?php echo $row['id']?> " class='btn btn-info'>Edit</a></td></tr>
-            ?>
+            
 
                 <?php endwhile; ?>
         </table>
@@ -59,12 +59,15 @@ $result = $mysqli->query('SELECT * from crud') or die(mysqli_error($mysqli));
 
 
 
-<div class="col-xs-1 text-center">
+<div class="text-center">
 <form action="process.php" method="POST"> 
 <div class="form-group">
+<label> Enter your name</label>
 <input type="text" name="name" value="enter your name">
 </div>
 <div class="form-group">
+<label> Enter your Location</label>
+
 <input type="text" name="location" value="enter your Location">
 </div>
 <div class="form-group">
