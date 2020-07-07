@@ -6,7 +6,7 @@
 // }else{
 //     echo"we dont have mysql";
 // }
-$mysqli= new mysqli('localhost','root','wipro@007','crud') or die(mysqli_error($mysqli));
+$mysqli= new mysqli('localhost','root','crud@001','crud') or die(mysqli_error($mysqli));
 //or die(mysqli_error($mysqli));
 
 if(isset($_POST['save'])){

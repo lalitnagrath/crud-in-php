@@ -14,7 +14,7 @@
 <body>
 <?php require_once 'process.php' ;
 
-$mysqli= new mysqli('localhost','root','wipro@007','crud') or die(mysqli_error($mysqli));
+$mysqli= new mysqli('localhost','root','crud@001','crud') or die(mysqli_error($mysqli));
 //or die(mysqli_error($mysqli));
 $result = $mysqli->query('SELECT * from crud') or die(mysqli_error($mysqli));
 
