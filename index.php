@@ -34,7 +34,8 @@ $result = $mysqli->query('SELECT * from crud') or die(mysqli_error($mysqli));
                 <tr>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['location']; ?></td>
-                <td><a href="index.php?edit=<?php echo $row['id']?> " class='btn btn-info'>Edit</a></td></tr>
+                <td><a href="index.php?edit=<?php echo $row['id']?> " class='btn btn-info'>Edit</a></td>
+                <td><a href="index.php?delete=<?php echo $row['id']?> " class='btn btn-danger'>Delete</a></td></tr>
             
 
                 <?php endwhile; ?>
@@ -42,23 +43,6 @@ $result = $mysqli->query('SELECT * from crud') or die(mysqli_error($mysqli));
     
 </div>
 </div> 
-<?php
-
-//    $result=  $mysqli->query("SELECT * FROM crud");
-//    pre_r($result->fetch_assoc());
-//    pre_r($result->fetch_assoc());
-
-//    function pre_r($array){
-//        echo '<pre>';
-//        print_r($array);
-//        echo "</pre>";
-//    }
-
-
-?>
-
-
-
 <div class="text-center">
 <form action="process.php" method="POST"> 
 <div class="form-group">
