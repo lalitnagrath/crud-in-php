@@ -48,7 +48,7 @@ $result = $mysqli->query('SELECT * from crud') or die(mysqli_error($mysqli));
 <input type="text" name="name" value="enter your name">
 </div>
 <div class="form-group">
-<label> Enter your Location</label>
+<label> Enter your Location:-</label>
 
 <input type="text" name="location" value="enter your Location">
 </div>
