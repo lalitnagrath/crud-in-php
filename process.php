@@ -11,3 +11,9 @@ if(isset($_POST['save'])){
 
 }
 
+if(isset($_GET['delete'])){
+    $id = $_GET['delete'];
+    echo $id;
+    $mysqli->query("DELETE FROM crud WHERE id=$id");
+}
+
