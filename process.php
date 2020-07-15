@@ -1,6 +1,5 @@
 <?php
 
-
 $mysqli= new mysqli('localhost','root','crud@001','crud') or die(mysqli_error($mysqli));
 
 if(isset($_POST['save'])){
